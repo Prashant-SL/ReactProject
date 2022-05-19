@@ -5,4 +5,4 @@ I faced challenges in using Chakra UI, as I was using it for the first time. Apa
 
 The project is deployed here.
 
-Tech Stack:- ReactJS, ChakraUI, Redux, HTML, CSS, MongoDB, ExpressJS, NodeJS.
+Tech Stack:- ReactJS, Redux, HTML, CSS, MongoDB, ExpressJS, NodeJS.
