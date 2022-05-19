@@ -1,0 +1,54 @@
+.card {
+	justify-content: space-around;
+	gap: 5%;
+	width: 100%;
+}
+.bigB {
+	display: flex;
+	width: 80%;
+	flex-wrap: wrap;
+	margin: 5px;
+	justify-content: center;
+	margin-left: 10%;
+}
+.content > h3 {
+	padding-left: 2%;
+	width: 70%;
+}
+.bigBox {
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 15px;
+	margin: 10px;
+}
+span {
+	font-size: 2.2vh;
+}
+.desc {
+	font-size: 3.5vh;
+}
+.imageBoxxx > img {
+	width: 300px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.desc > span {
+	font-size: 2.6vh;
+}
+.sortBtns {
+	display: flex;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 1.5%;
+	gap: 10px;
+	justify-content: end;
+}
+.sortBtns > select {
+	border-radius: 10px;
+	width: 15%;
+	color: rgb(131, 2, 88);
+	padding: 0.6% 1.5%;
+}
+.sortBtns > select > option {
+	background-color: rgba(55, 255, 0, 0.232);
+	color: rgb(6, 93, 0);
+}

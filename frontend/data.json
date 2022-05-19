@@ -1,0 +1,239 @@
+[
+	{
+		"id": "1",
+		"name": "Casio",
+		"price": 7994,
+		"color": "Red",
+		"discount": "13",
+		"category": "electronics",
+		"description": "Compatible with Casio’s Mobile Application “Chordana Play” which helps you learn all your favourite songs. Just download and import the MIDI file into the app & connect your phone to the Keyboard with an USB Cable. Chordana Play makes learning fun & easy. Equipped with 400 Tones & 77 Rhythms, the CT-S200 is an extremely versatile instrument with 13 Indian Tones & 14 Indian Rhythms",
+		"summary": "Casio CT-S200 Casiotone 61-Key Portable Keyboard (Red)",
+		"images": [
+			"https://m.media-amazon.com/images/I/611i09m4QUL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/618wP4Cq7TL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/61T6MjF8XjL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/71k1W7sncPL._SX522_.jpg"
+		]
+	},
+	{
+		"id": "2",
+		"name": "Casio",
+		"price": 8735,
+		"color": "White",
+		"discount": "5",
+		"category": "electronics",
+		"description": "Compatible with Casio's Mobile Application “Chordana Play” which helps you learn all your favourite songs. Just download and import the MIDI file into the app & connect your phone to the Keyboard with an USB Cable. Chordana Play makes learning fun & easy. Equipped with 400 Tones & 77 Rhythms, the CT-S200 is an extremely versatile instrument with 13 Indian Tones & 14 Indian Rhythms",
+		"summary": "Casio CT-S200 Casiotone 61-Key Portable Keyboard (White)",
+		"images": [
+			"https://m.media-amazon.com/images/I/61THcPfOiTL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/61knsnPXyBL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/61q360ps9LL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/715jpcRlHnL._SX522_.jpg"
+		]
+	},
+	{
+		"id": "3",
+		"name": "Yamaha",
+		"price": 15000,
+		"color": "Black",
+		"discount": "18",
+		"category": "electronics",
+		"description": "5inch cone woofer and 1inch dome tweeter. 54Hz - 30kHz frequency response. 45W LF plus 25W HF bi-amp system 70watts total",
+		"summary": "Yamaha Hs5 45W Wired Xlr Woofer - Black",
+		"images": [
+			"https://m.media-amazon.com/images/I/91OQWCG2g5L._SY879_.jpg",
+			"https://m.media-amazon.com/images/I/91fQrEHBjxL._SY879_.jpg",
+			"https://m.media-amazon.com/images/I/91ktf4NpirL._SY879_.jpg",
+			"https://m.media-amazon.com/images/I/91XYw-fU0gL._SY879_.jpg"
+		]
+	},
+	{
+		"id": "4",
+		"name": "Paradise Nauticals",
+		"price": 1019,
+		"color": "Wooden",
+		"discount": "12",
+		"category": "furniture",
+		"description": "Adjustable Lighting According to Your Needs Enhance Your Home / Office Look with Simple yet Stunning Design Easy installation Made with high-quality material",
+		"summary": "Paradise Nauticals Tripod Floor Lamp with Wooden Crafter Stand",
+		"images": [
+			"https://m.media-amazon.com/images/I/51sVCDGIxvS.jpg",
+			"https://m.media-amazon.com/images/I/71xa66sx85S._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/71vacghahAL._SX522_.jpg"
+		]
+	},
+	{
+		"id": "5",
+		"name": "Maison & Cuisine Store",
+		"price": 1399,
+		"color": "Wooden",
+		"discount": "15",
+		"category": "furniture",
+		"description": "Made from selected Non Woven cloth cover, high quality Galvanized iron pipe and PP Plastic Connectors, this portable storage closet will meet your long term storage needs. Beautifully designed and innovatively crafted modern design. With Movable clothes hanging rod and 8 storage shelves offers you enough space both for your longer outfits and folded clothes",
+		"summary": "Maison & Cuisine Collapsible Wardrobe Portable Foldable for Clothes racks",
+		"images": [
+			"https://m.media-amazon.com/images/I/818dGIz7sQL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/91dU215RnuL._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/A1GLbbSfJ8L._SX522_.jpg",
+			"https://m.media-amazon.com/images/I/71r690p-5ML._SX522_.jpg"
+		]
+	},
+	{
+		"id": "6",
+		"name": "Samsung S20 ",
+		"price": 34990,
+		"color": "Blue",
+		"discount": "9",
+		"category": "electronics",
+		"description": "5G Ready powered by Qualcomm Snapdragon 865 Octa-Core processor, 8GB RAM, 128GB internal memory expandable up to 1TB, Android 11.0 operating system and dual SIM Triple Rear Camera Setup - 12MP (Dual Pixel) OIS F1.8 Wide Rear Camera + 8MP OIS Tele Camera + 12MP Ultra Wide | 30X Space Zoom, Single Take & Night Mode | 32MP F2.2 Front Punch Hole Camera",
+		"summary": "Samsung Galaxy S20 FE 5G (Cloud Navy, 8GB RAM, 128GB Storage)",
+		"images": [
+			"https://m.media-amazon.com/images/I/81vDZyJQ-4L._SY741_.jpg",
+			"https://m.media-amazon.com/images/I/71yzyH-ohgL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/61+6BaAjbrL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/81W-nknAKEL._SX679_.jpg"
+		]
+	},
+	{
+		"id": "7",
+		"name": "Samsung S21 Ultra",
+		"price": 89900,
+		"color": "Black",
+		"discount": "13",
+		"category": "electronics",
+		"description": "(6.8-inch) Dynamic AMOLED 2X Display, WQHD+ resolution with 3200 X 1440 pixels resolution, 515 PPI with 16M colours 12GB RAM | 256GB internal Storage | Dual SIM (nano+nano) dual-standby (5G+5G)",
+		"summary": "Samsung S21 Ultra 5G (Phantom Black, 12GB RAM, 256GB Storage)",
+		"images": [
+			"https://m.media-amazon.com/images/I/81kfA-GtWwL._SY741_.jpg",
+			"https://m.media-amazon.com/images/I/71x8jDd8cPL._SY741_.jpg",
+			"https://m.media-amazon.com/images/I/61E6JwIgFgL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/51fWipo-opL._SY741_.jpg"
+		]
+	},
+	{
+		"id": "8",
+		"name": "The Alchemist (Kannada)",
+		"price": 249,
+		"color": "Orange",
+		"discount": "2",
+		"category": "books",
+		"description": "A global phenomenon, The Alchemist has been read and loved by over 62 million readers, topping bestseller lists in 74 countries worldwide. Now this magical fable is beautifully repackaged in an edition that lovers of Paulo Coelho will want to treasure forever.",
+		"summary": "The Alchemist (Kannada) Paperback",
+		"images": [
+			"https://images-na.ssl-images-amazon.com/images/I/51J9nrskqWL._SX323_BO1,204,203,200_.jpg",
+			"https://images-na.ssl-images-amazon.com/images/I/710O6gOhrTL.jpg"
+		]
+	},
+	{
+		"id": "9",
+		"name": "THE POWER OF YOUR SUBCONSCIOUS MIND",
+		"price": 94,
+		"color": "Green",
+		"discount": "9",
+		"category": "books",
+		"description": "As a man thinketh in his subconscious mind, so is he. Have you wondered why someone is joyous while another is miserable; why someone is fearful and anxious and another is exuding confidence; why so many good and kind people suffer the tortures of life? Dr Joseph Murphy answers these questions in his bestselling self-help book The Power of Your Subconscious Mind. ",
+		"summary": "THE POWER OF YOUR SUBCONSCIOUS MIND - Paperback",
+		"images": [
+			"https://images-na.ssl-images-amazon.com/images/I/41UOX0BzrOL._SX329_BO1,204,203,200_.jpg",
+			"https://m.media-amazon.com/images/S/aplus-media/vc/fc5c361f-77c9-4f19-8a54-7c1a86c4578b.__CR0,0,2083,2083_PT0_SX300_V1___.jpg",
+			"https://m.media-amazon.com/images/S/aplus-media/vc/31b683c9-66ae-4a79-8ec9-192b8a62a60d.__CR0,0,2083,2083_PT0_SX300_V1___.jpg",
+			"https://images-na.ssl-images-amazon.com/images/I/91tWDE4cDnL.jpg"
+		]
+	},
+	{
+		"id": "10",
+		"name": "Dennis Lingo",
+		"price": 499,
+		"color": "Grey",
+		"discount": "14",
+		"category": "fashion",
+		"description": "Fit Type: Slim Fit, Color Name: Grey, Material: Cotton, Long Sleeve",
+		"summary": "Dennis Lingo Men's Shirt",
+		"images": [
+			"https://m.media-amazon.com/images/I/51DAtjoWh5S._SX679._SX._UX._SY._UY_.jpg",
+			"https://m.media-amazon.com/images/I/81E9QhVZftS._SX679._SX._UX._SY._UY_.jpg",
+			"https://m.media-amazon.com/images/I/81zUZt1xtrS._SX679._SX._UX._SY._UY_.jpg",
+			"https://m.media-amazon.com/images/I/61P-IMUDcDS._SX679._SX._UX._SY._UY_.jpg"
+		]
+	},
+	{
+		"id": "11",
+		"name": "NIVIA",
+		"price": 699,
+		"color": "Orange",
+		"discount": "15",
+		"category": "fashion",
+		"description": "Closure: Lace-Up, Upper material: PVC synthetic leather, Sole material: TPU, Inner sole: Non-woven insole",
+		"summary": "Nivia Aviator 102705 Football Futsal Shoes",
+		"images": [
+			"https://m.media-amazon.com/images/I/71S-PzBYy5L._UX695_.jpg",
+			"https://m.media-amazon.com/images/I/71wGWXRA02L._UX695_.jpg",
+			"https://m.media-amazon.com/images/I/713nMq5t9iL._UX695_.jpg",
+			"https://m.media-amazon.com/images/I/71V8hSX-haL._UX695_.jpg"
+		]
+	},
+	{
+		"id": "12",
+		"name": "NIKE",
+		"price": 999,
+		"color": "Black",
+		"discount": "10",
+		"category": "fashion",
+		"description": "Shoe Width: Medium, Material Type: Rubber, Lifestyle: Casual, Closure Type: Slip On",
+		"summary": "Nike Men's Chroma Thong 5 Black Flip Flops Sandals",
+		"images": [
+			"https://m.media-amazon.com/images/I/61HRkvnroGL._UX575_.jpg",
+			"https://m.media-amazon.com/images/I/71lQk0Xod2L._UX575_.jpg",
+			"https://m.media-amazon.com/images/I/71J9Mi2BGgL._UX575_.jpg",
+			"https://m.media-amazon.com/images/I/714G7AfBOdL._UX575_.jpg"
+		]
+	},
+	{
+		"id": "13",
+		"name": "NIVIA",
+		"price": 399,
+		"color": "Orange",
+		"discount": "4",
+		"category": "sports",
+		"description": "Construction : Rubberized Moulded. Suitable for Hard Ground without Grass, Wet & Grassy Ground & Artificial Turf. Butyl bladder offers lasting air and shape retention to ensure uniform game",
+		"summary": "Nivia Storm Football - Size 5",
+		"images": [
+			"https://m.media-amazon.com/images/I/81V5qz2qbhL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/81qPbd+WZEL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/81j-Qlsqp+L._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/912IsYAKJAL._SX679_.jpg"
+		]
+	},
+	{
+		"id": "14",
+		"name": "KORE STORE",
+		"price": 199,
+		"color": "Black",
+		"discount": "25",
+		"category": "sports",
+		"description": "1 kg x 2 PVC dumbbells. A combination of gym equipment for the perfect workout. Highly durable and long lasting. A perfect muscle builder",
+		"summary": "Kore PVC DM 1-5 Kg Combo Dumbbells Set",
+		"images": [
+			"https://m.media-amazon.com/images/I/71JAYyVw+PL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/71G+t6NG29L._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/71QJnRTTSDL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/71r4dfbXTlL._SX679_.jpg"
+		]
+	},
+	{
+		"id": "15",
+		"name": "KORE STORE",
+		"price": 1999,
+		"color": "Black",
+		"discount": "25",
+		"category": "sports",
+		"description": "10 kg of PVC weight (2.5 kg x 4 = 10 kg). 1 x 3 feet curl rod, 2 x 14 inch dumbbell Rods. 100 percent pure leather gym gloves + 1 Gym Bag + 1 skipping rope + 1 hand gripper + 4 locks and clippers comes with the rods",
+		"summary": "Kore PVC 10KG Combo 3 Home Gym Set with One 3 Ft Curl and One Pair Dumbbell Rods with Gym Bag and Gym Accessories, Multicolor",
+		"images": [
+			"https://m.media-amazon.com/images/I/81geHXZ6weL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/71T089zkPEL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/71bW6FQifzL._SX679_.jpg",
+			"https://m.media-amazon.com/images/I/814SZyqQMQL._SX679_.jpg"
+		]
+	}
+]

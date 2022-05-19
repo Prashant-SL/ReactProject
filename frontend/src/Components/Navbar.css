@@ -1,0 +1,30 @@
+nav ul li {
+	list-style: none;
+	/* list-style-type: none */
+}
+nav {
+	display: flex;
+	top: 0;
+	background-color: rgb(255, 255, 255);
+}
+.leftBox {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	font-style: normal;
+	align-items: center;
+}
+a {
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+}
+.leftBigBox {
+	width: 350px;
+	font-size: 20px;
+	align-self: center;
+	/* grid-gap: 30px; */
+}
+nav {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
