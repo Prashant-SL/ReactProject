@@ -5,7 +5,7 @@ I faced challenges in using Chakra UI, as I was using it for the first time. Apa
 
 The project is deployed <a href="https://aquamarine-meerkat-45f945.netlify.app/">here</a>
 
-Tech Stack:- ReactJS, Redux, HTML, CSS, MongoDB, ExpressJS, NodeJS.
+Tech Stack:- ReactJS, Chakra UI, Redux, HTML, CSS, MongoDB, ExpressJS, NodeJS.
 
 Screenshots:-
 
