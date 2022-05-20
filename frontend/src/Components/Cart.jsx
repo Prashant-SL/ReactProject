@@ -1,26 +1,17 @@
-import { margin } from '@mui/system';
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router';
 import axios from 'axios';
-import Checkout from './Checkout';
-import { Link } from 'react-router-dom';
 import './Cart.css';
 
 const Cart = () => {
 	var [state, setState] = useState([]);
-	// var retrievedProduct = JSON.parse(localStorage.getItem('cartProducts'));
 	var retrievedProduct = [];
 	var quantity = state.length;
 	var response;
 	const fetchCart = async () => {
-		let response = await axios.get('http://localhost:8080/cart');
+		let response = await axios.get('https://young-reaches-27800.herokuapp.com/cart');
 		let resp = response.data;
-		// console.log('resp:', resp);
 		setState([...resp]);
-		// setState([...resp]);
 	};
-	// retrievedProduct.push([...state]);
 	var totalPrice = 0;
 	var prices = state.map((e) => {
 		return (totalPrice += Number(e.price));
@@ -31,7 +22,9 @@ const Cart = () => {
 	}, []);
 
 	const deleteItem = async () => {
-		let response = await axios.delete('http://localhost:8080/cart/_id');
+		let response = await axios.delete(
+			'https://young-reaches-27800.herokuapp.com/cart/_id'
+		);
 		let resp = response.data;
 		console.log('resp:', resp);
 		setState([...resp]);
@@ -57,7 +50,7 @@ const Cart = () => {
 											className='removeBtn'
 											onClick={async () => {
 												let response = await axios.delete(
-													`http://localhost:8080/cart/${e._id}`
+													`https://young-reaches-27800.herokuapp.com/cart/${e._id}`
 												);
 												let resp = response.data;
 												alert('Product has been removed');
@@ -84,7 +77,9 @@ const Cart = () => {
 					<b>Total Price: </b>
 					{totalPrice}
 				</p>
-				<button style={{ width: '8%', marginBottom: '2%' }}>Checkout</button>
+				<button style={{ width: '8%', marginBottom: '2%' }}>
+					<a href='/checkout'>Checkout</a>
+				</button>
 			</div>
 		</div>
 	);

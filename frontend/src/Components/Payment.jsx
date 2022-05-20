@@ -13,6 +13,7 @@ const Payment = () => {
 					</h1>
 					<p class='course'>Thanks for shopping with us!</p>
 				</div>
+
 				<div class='card-details'>
 					<p>Pay using Credit or Debit card</p>
 					<div class='card-number'>

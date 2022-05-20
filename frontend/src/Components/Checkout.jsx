@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import './Checkout.css';
 const Checkout = () => {
+	let navigate = useNavigate();
 	return (
 		<>
 			<div class='wrapper'>
@@ -52,7 +54,15 @@ const Checkout = () => {
 							</div>
 						</div>
 						<div class='btns'>
-							<button>Purchase</button>
+							<button
+								onClick={() => {
+									alert('Payment done successfully');
+									// window.location.href = '/cart';
+									navigate('/cart');
+								}}
+							>
+								Purchase now
+							</button>
 						</div>
 					</form>
 				</div>

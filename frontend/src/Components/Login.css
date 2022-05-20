@@ -3,6 +3,7 @@ main {
 	width: 100vw;
 	position: relative;
 	margin: 0 auto;
+	display: flex;
 }
 
 .row {
@@ -14,17 +15,12 @@ main {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	/* transform: translate(-50%, -50%); */
 }
 
 .colm-logo {
 	flex: 0 0 50%;
 	text-align: left;
-}
-
-.colm-form {
-	flex: 0 0 40%;
-	text-align: center;
 }
 
 .colm-logo img {
@@ -38,7 +34,7 @@ main {
 	line-height: 32px;
 }
 
-.colm-form .form-container {
+.form-container {
 	background-color: #ffffff;
 	border: none;
 	border-radius: 10px;
@@ -48,8 +44,8 @@ main {
 	max-width: 400px;
 }
 
-.colm-form .form-container input,
-.colm-form .form-container .btn-login {
+.form-container input,
+.form-container .btn-login {
 	width: 100%;
 	margin: 5px 0;
 	height: 45px;
@@ -57,29 +53,31 @@ main {
 	font-size: 16px;
 }
 
-.colm-form .form-container input {
+.form-container input {
 	border: 1px solid #dddfe2;
 	color: #1d2129;
 	padding: 0 8px;
-	outline: none;
+	width: 96%;
+	outline: #1877f2;
+	border: #1c1e2151 solid 0.5px;
 }
 
-.colm-form .form-container input:focus {
+.form-container input:focus {
 	border-color: #1877f2;
 	box-shadow: 0 0 0 2px #e7f3ff;
 }
 
-.colm-form .form-container .btn-login {
+.form-container .btn-login {
 	background-color: #1877f2;
 	border: none;
 	border-radius: 6px;
 	font-size: 20px;
-	padding: 0 16px;
+	padding: 0 10px;
 	color: #ffffff;
 	font-weight: 700;
 }
 
-.colm-form .form-container a {
+.form-container a {
 	display: block;
 	color: #1877f2;
 	font-size: 14px;
@@ -88,11 +86,11 @@ main {
 	border-bottom: 1px solid #dadde1;
 }
 
-.colm-form .form-container a:hover {
+.form-container a:hover {
 	text-decoration: underline;
 }
 
-.colm-form .form-container .btn-new {
+.form-container .btn-new {
 	background-color: #42b72a;
 	border: none;
 	border-radius: 6px;
@@ -104,12 +102,32 @@ main {
 	margin-top: 20px;
 }
 
-.colm-form p {
-	font-size: 14px;
+p {
+	font-size: 125%;
+	text-align: center;
 }
 
-.colm-form p a {
+p a {
 	text-decoration: none;
 	color: #1c1e21;
 	font-weight: 600;
+}
+.mainBox {
+	display: flex;
+	margin-top: -5%;
+	width: 80%;
+	align-tracks: center;
+	gap: 20px;
+}
+.box {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-container {
+	width: 80%;
+	margin: auto;
+}
+.form-container2 {
+	margin-top: -60%;
 }

@@ -10,9 +10,11 @@ const ProductComponent = () => {
 	const [filteredData, setFilteredData] = useState([]);
 
 	const fetchProducts = async () => {
-		const response = await axios.get('http://localhost:8080/products').catch((err) => {
-			console.log('Err: ', err);
-		});
+		const response = await axios
+			.get('https://young-reaches-27800.herokuapp.com/products')
+			.catch((err) => {
+				console.log('Err: ', err);
+			});
 		let resp = response.data;
 		setFilteredData([...resp]);
 	};
@@ -37,7 +39,7 @@ const ProductComponent = () => {
 		});
 		setFilteredData(updated);
 	};
-	// dispatch(setProducts(filteredData));
+
 	const sorting = (e) => {
 		let sortCriteria = e.target.value;
 		let updated = filteredData.sort((a, b) => {
@@ -51,6 +53,7 @@ const ProductComponent = () => {
 		});
 		setFilteredData([...updated]);
 	};
+
 	dispatch(setProducts(filteredData));
 
 	const products = useSelector((state) => state.allProducts.products);

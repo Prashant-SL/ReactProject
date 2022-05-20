@@ -14,12 +14,13 @@ const ProductDetails = () => {
 	const fetchProductDetail = async (id) => {
 		let prodid = +id;
 		let response = await axios
-			.get(`http://localhost:8080/products/${id}`)
+			.get(`https://young-reaches-27800.herokuapp.com/products/${id}`)
 			// .then((response) => {
 			// })
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
+		console.log('response:', response.data);
 		// console.log('response:', response.data);
 		dispatch(selectedProduct(response.data));
 	};
@@ -32,13 +33,12 @@ const ProductDetails = () => {
 	}, [id]);
 
 	const addProductCart = async () => {
-		var retrievedProduct = JSON.parse(localStorage.getItem('cartProducts'));
 		selected.push(product);
-		let productData = await axios.post('http://localhost:8080/cart', product);
-		console.log('productData:', productData);
-
-		localStorage.setItem('cartProducts', JSON.stringify(selected));
+		await axios.post('https://young-reaches-27800.herokuapp.com/cart', product);
+		alert('Product has been adde to cart');
+		window.location.href = '/cart';
 	};
+
 	return (
 		<div>
 			{Object.keys(product).length === 0 ? (
@@ -46,12 +46,26 @@ const ProductDetails = () => {
 			) : (
 				<div>
 					<div className='box'>
-						<div className='prodImg'>
-							<img src={product.images[0]} width='20%' style={{ paddingLeft: '3%' }} />
+						<div
+							className='prodImg'
+							style={{
+								display: 'flex',
+								flexWrap: 'wrap',
+								gap: '20px',
+								width: '90%',
+							}}
+						>
+							{product.images.map((e) => {
+								return (
+									<img src={e} style={{ width: '45%', border: '1px solid #00000019' }} />
+								);
+							})}
 						</div>
 						<div className='details'>
-							<h1>{product.summary}</h1>
-							<p>Price: ${product.price}</p>
+							<h2>{product.summary}</h2>
+							<p>
+								Price: ₹{product.price} Color: {product.color}
+							</p>
 							<h5>Category: {product.category}</h5>
 							<p>{product.description}</p>
 							<div className='afterDetails'>

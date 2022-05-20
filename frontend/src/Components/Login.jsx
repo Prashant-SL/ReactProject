@@ -1,9 +1,13 @@
 import React from 'react';
+import Signup from './Signup';
 import './Login.css';
 
 const Login = () => {
 	return (
-		<>
+		<div style={{ display: 'flex' }}>
+			<div>
+				<Signup />
+			</div>
 			<main>
 				<div className='row'>
 					<div className='colm-form'>
@@ -18,7 +22,7 @@ const Login = () => {
 					</div>
 				</div>
 			</main>
-		</>
+		</div>
 	);
 };
 export default Login;

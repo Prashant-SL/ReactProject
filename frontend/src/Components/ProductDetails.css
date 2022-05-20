@@ -3,6 +3,7 @@
 	width: 90%;
 	gap: 8%;
 	margin: auto;
+	margin-bottom: 5%;
 }
 .prodImg {
 	margin: auto;
@@ -12,7 +13,7 @@
 .details {
 	width: 100%;
 }
-.details > h1 {
+.details > h2 {
 	color: rgb(17, 71, 3);
 	width: 80%;
 }

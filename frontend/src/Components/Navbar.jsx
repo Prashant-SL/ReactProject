@@ -11,7 +11,7 @@ const Navbar = () => {
 				</a>
 			</ul>
 
-			<div className='leftBigBox'>
+			<div className='leftBigBox' style={{ display: 'flex' }}>
 				<Link to='/'>Home</Link>
 				<Link to='/cart'>Cart</Link>
 				<Link to='/login'>Login</Link>
