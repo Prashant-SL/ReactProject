@@ -8,6 +8,7 @@ The project is deployed <a href="https://aquamarine-meerkat-45f945.netlify.app/"
 Tech Stack:- ReactJS, Redux, HTML, CSS, MongoDB, ExpressJS, NodeJS.
 
 Screenshots:-
+
 ![image](https://user-images.githubusercontent.com/95927107/169561376-7db84f4d-fe7a-401d-809f-8eb94c99c3f9.png)
 
 ![image](https://user-images.githubusercontent.com/95927107/169561482-ed41369f-070f-400a-b71e-cb6d14149820.png)
