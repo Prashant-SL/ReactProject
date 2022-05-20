@@ -9,14 +9,21 @@ Tech Stack:- ReactJS, Redux, HTML, CSS, MongoDB, ExpressJS, NodeJS.
 
 Screenshots:-
 
+Homepage:-
+
 ![image](https://user-images.githubusercontent.com/95927107/169561376-7db84f4d-fe7a-401d-809f-8eb94c99c3f9.png)
 
 ![image](https://user-images.githubusercontent.com/95927107/169561482-ed41369f-070f-400a-b71e-cb6d14149820.png)
 
+Product Details page:- 
+
 ![image](https://user-images.githubusercontent.com/95927107/169561560-6edbb288-9986-4ded-8368-5fbdf2f0ac32.png)
+
+Login page:- 
 
 ![image](https://user-images.githubusercontent.com/95927107/169561645-bfe515e6-aae4-49b4-aa6c-6f4addc2b6ee.png)
 
 Cart page:- 
+
 ![image](https://user-images.githubusercontent.com/95927107/169562131-38644d46-bca9-47a2-b559-c9fb5662282f.png)
 
