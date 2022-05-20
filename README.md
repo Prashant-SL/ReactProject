@@ -16,3 +16,7 @@ Screenshots:-
 ![image](https://user-images.githubusercontent.com/95927107/169561560-6edbb288-9986-4ded-8368-5fbdf2f0ac32.png)
 
 ![image](https://user-images.githubusercontent.com/95927107/169561645-bfe515e6-aae4-49b4-aa6c-6f4addc2b6ee.png)
+
+Cart page:- 
+![image](https://user-images.githubusercontent.com/95927107/169562131-38644d46-bca9-47a2-b559-c9fb5662282f.png)
+
