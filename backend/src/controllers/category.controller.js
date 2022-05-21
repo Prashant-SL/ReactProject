@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Category = require('../models/category.model.js');
 
-router.get('/', async (req, res) => {
+router.get('', async (req, res) => {
 	try {
 		const categories = await Category.find().lean().exec();
 		return res.send(categories);
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.post('/', async (req, res) => {
+router.post('', async (req, res) => {
 	try {
 		const categories = await Category.create(req.body);
 		return res.status(800).send(categories);

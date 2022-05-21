@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Cart = require('../models/cart.model.js');
 
-router.get('/', async (req, res) => {
+router.get('', async (req, res) => {
 	try {
 		const carts = await Cart.find().lean().exec();
 		return res.send(carts);
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.post('/', async (req, res) => {
+router.post('', async (req, res) => {
 	try {
 		const carts = await Cart.create(req.body);
 		return res.status(800).send(carts);
