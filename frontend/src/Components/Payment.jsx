@@ -1,45 +1,27 @@
-import React from 'react';
-const Payment = () => {
-	return (
-		<>
-			<div class='container'>
-				<div class='main-content'>
-					<p class='text'>Payment Form</p>
-				</div>
+import { Box, Heading, Input, Button, FormControl, FormLabel } from '@chakra-ui/react'
+import React from 'react'
 
-				<div class='centre-content'>
-					<h1 class='price'>
-						2499<span>/-</span>
-					</h1>
-					<p class='course'>Thanks for shopping with us!</p>
-				</div>
-
-				<div class='card-details'>
-					<p>Pay using Credit or Debit card</p>
-					<div class='card-number'>
-						<label> Card Number </label>
-						<input type='text' class='card-number-field' placeholder='###-###-###' />
-					</div>
-					<br />
-					<div class='date-number'>
-						<label> Expiry Date </label>
-						<input type='text' class='date-number-field' placeholder='DD-MM-YY' />
-					</div>
-
-					<div class='cvv-number'>
-						<label> CVV number </label>
-						<input type='text' class='cvv-number-field' placeholder='xxx' />
-					</div>
-					<div class='nameholder-number'>
-						<label> Card Holder name </label>
-						<input type='text' class='card-name-field' placeholder='Enter your Name' />
-					</div>
-					<button type='submit' class='submit-now-btn'>
-						submit
-					</button>
-				</div>
-			</div>
-		</>
-	);
-};
-export default Payment;
+export default function Payment() {
+  const payment=()=>{
+    window.alert("Payment Sucessfull and Your Order has been placed")
+    
+  }
+  return (
+    <>
+      <Box maxW="95%" m='auto'>
+          <Heading size='md'>Payment Page</Heading>
+        <Box w={{base:"80%",md:"50%", lg:"30%"}} border='1px solid black' borderRadius='10' mt='5px' p='5' m='auto' textAlign='left'>
+          <FormControl>
+            <FormLabel>ATM Number</FormLabel>
+          <Input type='text' placeholder='Enter atm card Number'></Input>
+          <FormLabel>Expiry Date</FormLabel>
+          <Input type='date' placeholder='Enter atm card Number'></Input>
+          <FormLabel>CVV</FormLabel>
+          <Input type='text' placeholder='Enter cvv'></Input>
+          </FormControl>
+        </Box>
+          <Button mt='3' onClick={payment}>Make Payment</Button>
+      </Box>
+    </>
+  )
+}

@@ -1,127 +1,134 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { setProducts } from '../redux/actions/productsActions';
+import {
+	Heading,
+	Grid,
+	GridItem,
+	Flex,
+	Box,
+	Text,
+	Link,
+	Image,
+	Select,
+	textDecoration,
+} from '@chakra-ui/react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
-import './ProductComponent.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { setProducts } from '../redux/actions/productActions';
 
-const ProductComponent = () => {
+export default function ProductComponent() {
+	const products = useSelector((state) => state.allProducts.products);
 	const dispatch = useDispatch();
-	const [filteredData, setFilteredData] = useState([]);
 
 	const fetchProducts = async () => {
 		const response = await axios
-			.get('https://young-reaches-27800.herokuapp.com/products')
+			.get('https://rvsn.herokuapp.com/products/')
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
-		let resp = response.data;
-		setFilteredData([...resp]);
+		dispatch(setProducts(response.data));
 	};
+
 	useEffect(() => {
 		fetchProducts();
 	}, []);
 
-	const filtering = (el) => {
-		let filterCriteria = el.target.value;
-		let updated = filteredData.filter((el) => {
-			if (filterCriteria === 'electronics') {
-				return el.category === 'electronics';
-			} else if (filterCriteria === 'fashion') {
-				return el.category === 'fashion';
-			} else if (filterCriteria === 'books') {
-				return el.category === 'books';
-			} else if (filterCriteria === 'furniture') {
-				return el.category === 'furniture';
-			} else if (filterCriteria === '') {
-				return el;
-			}
-		});
-		setFilteredData(updated);
+	const handleBrands = async (e) => {
+		let brand = e.target.value;
+		const response = await axios
+			.get(`https://rvsn.herokuapp.com/products/sort/${brand}`)
+			.catch((err) => {
+				console.log('Err: ', err);
+			});
+		dispatch(setProducts(response.data));
 	};
 
-	const sorting = (e) => {
-		let sortCriteria = e.target.value;
-		let updated = filteredData.sort((a, b) => {
-			if (sortCriteria === 'asc') {
+	const priceSorting = (e) => {
+		let condition = e.target.value;
+		let updated = products.sort((a, b) => {
+			if (condition == 'low') {
 				return a.price - b.price;
-			} else if (sortCriteria === 'desc') {
+			} else {
 				return b.price - a.price;
-			} else if (sortCriteria === '') {
-				return;
 			}
 		});
-		setFilteredData([...updated]);
+		dispatch(setProducts([...updated]));
 	};
 
-	dispatch(setProducts(filteredData));
-
-	const products = useSelector((state) => state.allProducts.products);
-	const { id, title, image, price, category } = products;
 	return (
-		<div style={{ display: 'grid' }}>
-			<div className='sortBtns'>
-				<select onChange={filtering} placeholder='Sort By'>
-					<option value=''>Sort By Category</option>
-					<option value='electronics'>Electronics</option>
-					<option value='books'>Books</option>
-					<option value='furniture'>Furniture</option>
-					<option value='fashion'>Fashion</option>
-				</select>
-				<select onChange={sorting} placeholder='Sort By'>
-					<option value=''>Sort By Price</option>
-					<option value='asc'>Low to High</option>
-					<option value='desc'>High to Low</option>
-				</select>
-			</div>
+		<>
+			<Box maxW='95%' m='auto' mt='5' boxShadow='dark-lg' p='5' rounded='md' bg='white'>
+				<Box textAlign='left' display='flex' gap={2}>
+					<Select placeholder='Select Brand' w='200px' onChange={handleBrands}>
+						<option value='Lenovo'>Lenovo</option>
+						<option value='Dell'>Dell</option>
+						<option value='HP'>HP</option>
+					</Select>
+					<Select placeholder='Sort By Price' w='200px' onChange={priceSorting}>
+						<option value='low'>Low to High</option>
+						<option value='high'>High to Low</option>
+					</Select>
+				</Box>
 
-			<div className='bigB'>
-				{products.map((e) => {
-					return (
-						<div className='bigBox' key={e.id} style={{ width: '30%' }}>
-							<Link to={`/product/${e._id}`}>
-								<div className='card'>
-									<div className='imageBoxxx'>
-										<img
-											style={{ padding: '9%' }}
-											src={e.images}
-											alt={e.name}
-											height='300px'
-											width='300px'
-										/>
-									</div>
-									<div className='content'>
-										<h3
-											style={{
-												height: '60px',
-												overflow: 'hidden',
-											}}
-										>
-											{e.summary}
-										</h3>
-										<div
-											style={{
-												display: 'flex',
-												justifyContent: 'space-between',
-												padding: ' 0% 2%',
-											}}
-										>
-											<p className='desc'>
-												<span>Price: ₹{e.price}</span>
-											</p>
-											<p className='desc'>
-												<span>Category: {e.category}</span>
-											</p>
-										</div>
-									</div>
-								</div>
+				<Grid
+					gap={6}
+					templateColumns={{
+						base: 'repeat(1, 1fr)',
+						md: 'repeat(2, 1fr)',
+						lg: 'repeat(4, 1fr)',
+					}}
+				>
+					{products.map((e) => {
+						return (
+							<Link href={`products/${e._id}`} _hover={{ textDecoration: 'none' }}>
+								<Box
+									w='100%'
+									minH='100%'
+									borderRadius={5}
+									textDecoration='none'
+									mt='10px'
+									boxShadow='dark-lg'
+									p='0'
+									rounded='md'
+									bg='white'
+								>
+									<Image src={e.images[0]} p={4} h='50%' m='auto'></Image>
+									<Flex direction='row' justifyContent='space-between' lineHeight={1.6}>
+										<Box textAlign='left' textDecor='none'>
+											<Flex direction='column' ml={1}>
+												<Heading size='sm'>{e.brandname}</Heading>
+												<Text>
+													<b>Ram: </b>
+													{e.ram}
+												</Text>
+												<Text>
+													<b>Storage: </b>
+													{e.hard_disik_size}
+												</Text>
+											</Flex>
+										</Box>
+										<Box textAlign='left'>
+											<Flex direction='column' mr={1}>
+												<Heading size='sm'>INR {e.price}</Heading>
+												<Text>
+													<b>Screen Size: </b>
+													{e.size} Inches
+												</Text>
+												<Text>
+													<b>OS: </b>
+													{e.os}
+												</Text>
+											</Flex>
+										</Box>
+									</Flex>
+									<Heading size='sm' ml={1} mr={1} textAlign='left'>
+										{e.summary}
+									</Heading>
+								</Box>
 							</Link>
-						</div>
-					);
-				})}
-			</div>
-		</div>
+						);
+					})}
+				</Grid>
+			</Box>
+		</>
 	);
-};
-
-export default ProductComponent;
+}

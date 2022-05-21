@@ -1,13 +1,15 @@
-import React from 'react';
-import './App.css';
-import Routers from './Components/Routers';
+import './App.css'
+import Checkout from './Components/Checkout';
+import Payment from './Components/Payment';
+import Router from './Components/Router';
 
 function App() {
-	return (
-		<div>
-			<Routers />
-		</div>
-	);
+  return (
+    <div className="App">
+      <Router />
+      {/* <Payment /> */}
+    </div>
+  )
 }
 
-export default App;
+export default App

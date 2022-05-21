@@ -1,17 +1,16 @@
-import React, { useEffect, useCallback, useMemo, useState } from 'react';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { setProducts } from '../redux/actions/productsActions';
-import ProductComponent from './ProductComponent';
+import React from 'react'
+import {useSelector} from 'react-redux'
+import ProductComponent from './ProductComponent'
+import { Box } from '@chakra-ui/react'
 
-const ProductListing = () => {
-	return (
-		<>
-			<div style={{ display: 'flex' }}>
-				<ProductComponent />
-			</div>
-		</>
-	);
-};
-
-export default ProductListing;
+export default function ProductListing() {
+  const products = useSelector((state) => state);
+  console.log(products)
+  return (
+    <>
+      <Box>
+        <ProductComponent />
+      </Box>
+    </>
+  )
+}

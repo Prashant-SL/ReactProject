@@ -1,73 +1,72 @@
-import React from 'react';
-import { useNavigate } from 'react-router';
-import './Checkout.css';
-const Checkout = () => {
-	let navigate = useNavigate();
-	return (
-		<>
-			<div class='wrapper'>
-				<div class='container'>
-					<form action=''>
-						<h1>
-							<i class='fas fa-shipping-fast'></i>
-							Shipping Details
-						</h1>
-						<div class='name'>
-							<div>
-								<label for='f-name'>First Name</label>
-								<input type='text' name='f-name' />
-							</div>
-							<div>
-								<label for='l-name'>Last Name</label>
-								<input type='text' name='l-name' />
-							</div>
-						</div>
-						<div class='street'>
-							<label for='name'>Street</label>
-							<input type='text' name='street' />
-						</div>
-						<div class='address-info'>
-							<div>
-								<label for='city'>City</label>
-								<input type='text' name='city' />
-							</div>
-							<div>
-								<label for='state'>State</label>
-								<input type='text' name='state' />
-							</div>
-						</div>
-						<h1>
-							<i class='far fa-credit-card'></i> Payment Information
-						</h1>
-						<div class='cc-num'>
-							<label for='card-num'>Credit Card No.</label>
-							<input type='text' name='card-num' />
-						</div>
-						<div class='cc-info'>
-							<div>
-								<label for='card-num'>Exp</label>
-								<input type='text' name='expire' />
-							</div>
-							<div>
-								<label for='card-num'>CCV</label>
-								<input type='text' name='security' />
-							</div>
-						</div>
-						<div class='btns'>
-							<button
-								onClick={() => {
-									alert('Payment done successfully');
-									// window.location.href = '/cart';
-									navigate('/cart');
-								}}
-							>
-								Purchase now
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</>
-	);
-};
-export default Checkout;
+import { Box, Button, Flex, FormControl, FormLabel, Heading, Input, Link, Text } from '@chakra-ui/react'
+import React,{useState, useEffect} from 'react'
+import axios from 'axios';
+
+export default function Checkout() {
+  const [cart ,setcart]=useState([])
+  
+  const loginData =JSON.parse(localStorage.getItem('login')) || 0;
+  console.log(loginData.email)
+  
+  let response;
+  const fetchProducts = async () => {
+     response = await axios
+      .get("https://rvsn.herokuapp.com/cart/")
+      .catch((err) => {
+        console.log("Err: ", err);
+    });
+    setcart([...response.data])
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  let totalPrice = 0;
+  for(let i=0; i<cart.length; i++){
+    totalPrice += Number(cart[i].price);
+  }
+
+  return (
+    <>
+      <Box maxW="95%" m='auto' mt='10'>
+        <Box maxW={{base:"100%", md:"60%", lg:"60%"}} m='auto' boxShadow='outline' p='6' rounded='md' bg='white'>
+        <Flex gap='5' direction={{base:'column', md:'column', lg:'row'}}>
+            <Box w={{base:'100%', md:'100%', lg:'50%'}} boxShadow='dark-lg' p='6' rounded='md' bg='white' bgColor='#F0FFF4'>
+                <FormControl p='5'>
+                    <FormLabel>Name</FormLabel>
+                    <Input type="text" value={`${loginData.name}`} readonly/>
+                    <FormLabel>Email</FormLabel>
+                    <Input type="text" value={`${loginData.email}`} readonly/>
+                    <FormLabel>Address</FormLabel>
+                    <Input type="text" placeholder='Enter Shipping Address'/>
+                </FormControl>
+
+            </Box>
+            <Box w={{base:'100%', md:'100%', lg:'50%'}} boxShadow='dark-lg' p='6' rounded='md' bg='white' bgColor='#F0FFF4'>
+              <Heading size='sm'>Price Value</Heading>
+              {
+                cart.map((e=>{
+                  return(
+                    <Flex justifyContent='space-between' p='5'>
+                      <Heading size='sm'>{e.brandname}</Heading>
+                      <Heading size='sm'>{e.price}</Heading>
+                    </Flex>
+                  )
+                }))
+              }
+              <Flex justifyContent='space-between' p='5'>
+                <Heading size='sm'>Total</Heading>
+                <Heading size='sm'>{totalPrice}</Heading>
+              </Flex>
+              <hr></hr>
+              <Link href='/payment'>
+              <Button mt='5'>Procced to Payment</Button>
+              </Link>
+            </Box>
+        </Flex>
+        </Box>
+      </Box>
+    </>
+  )
+}
