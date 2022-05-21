@@ -14,14 +14,10 @@ const ProductDetails = () => {
 	const fetchProductDetail = async (id) => {
 		let prodid = +id;
 		let response = await axios
-			.get(`https://young-reaches-27800.herokuapp.com/products/${id}`)
-			// .then((response) => {
-			// })
+			.get(`https://reactministore.herokuapp.com/products/${id}`)
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
-		console.log('response:', response.data);
-		// console.log('response:', response.data);
 		dispatch(selectedProduct(response.data));
 	};
 
@@ -34,7 +30,7 @@ const ProductDetails = () => {
 
 	const addProductCart = async () => {
 		selected.push(product);
-		await axios.post('https://young-reaches-27800.herokuapp.com/cart', product);
+		await axios.post('https://reactministore.herokuapp.com/cart', product);
 		alert('Product has been adde to cart');
 		window.location.href = '/cart';
 	};

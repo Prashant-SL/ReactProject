@@ -12,7 +12,7 @@ export default function Navbar() {
 
 	let response;
 	const fetchProducts = async () => {
-		response = await axios.get('https://rvsn.herokuapp.com/cart/').catch((err) => {
+		response = await axios.get('http://localhost:4500/cart/').catch((err) => {
 			console.log('Err: ', err);
 		});
 		setcart([...response.data]);

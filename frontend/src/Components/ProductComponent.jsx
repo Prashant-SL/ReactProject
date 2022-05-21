@@ -21,7 +21,7 @@ export default function ProductComponent() {
 
 	const fetchProducts = async () => {
 		const response = await axios
-			.get('https://rvsn.herokuapp.com/products/')
+			.get('https://reactministore.herokuapp.com/products/products/')
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
@@ -35,7 +35,7 @@ export default function ProductComponent() {
 	const handleBrands = async (e) => {
 		let brand = e.target.value;
 		const response = await axios
-			.get(`https://rvsn.herokuapp.com/products/sort/${brand}`)
+			.get(`https://reactministore.herokuapp.com/products/products/sort/${brand}`)
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
@@ -91,7 +91,7 @@ export default function ProductComponent() {
 									rounded='md'
 									bg='white'
 								>
-									<Image src={e.images[0]} p={4} h='50%' m='auto'></Image>
+									<Image src={e.images[2]} p={4} h='50%' m='auto'></Image>
 									<Flex direction='row' justifyContent='space-between' lineHeight={1.6}>
 										<Box textAlign='left' textDecor='none'>
 											<Flex direction='column' ml={1}>

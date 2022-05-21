@@ -11,20 +11,22 @@ import Products from './ProductListing';
 import Register from './Register';
 
 function Router() {
-  return (
-    <div>
-        <Navbar />
-        <Routes>
-            <Route path='/' element={<Home />}>Home</Route>
-            <Route path='/products' element={<Products />}></Route>
-            <Route path={`/products/:id`} element={<ProductDetail/>}></Route>
-            <Route path={`/cart`} element={<Cart/>}></Route>
-            <Route path={`/login`} element={<Register/>}></Route>
-            <Route path={`/checkout`} element={<Checkout/>}></Route>
-            <Route path={`/payment`} element={<Payment />}></Route>
-        </Routes>
-    </div>
-  )
+	return (
+		<div>
+			<Navbar />
+			<Routes>
+				<Route path='/' element={<Home />}>
+					Home
+				</Route>
+				<Route path='/products' element={<Products />}></Route>
+				<Route path={`/products/:id`} element={<ProductDetail />}></Route>
+				<Route path={`/cart`} element={<Cart />}></Route>
+				<Route path={`/login`} element={<Register />}></Route>
+				<Route path={`/checkout`} element={<Checkout />}></Route>
+				<Route path={`/payment`} element={<Payment />}></Route>
+			</Routes>
+		</div>
+	);
 }
 
 export default Router;

@@ -1,15 +1,12 @@
-import './App.css'
-import Checkout from './Components/Checkout';
-import Payment from './Components/Payment';
+import './App.css';
 import Router from './Components/Router';
 
 function App() {
-  return (
-    <div className="App">
-      <Router />
-      {/* <Payment /> */}
-    </div>
-  )
+	return (
+		<div className='App'>
+			<Router />
+		</div>
+	);
 }
 
-export default App
+export default App;
