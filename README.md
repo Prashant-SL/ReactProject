@@ -5,7 +5,32 @@ I faced challenges in using Chakra UI, as I was using it for the first time. Apa
 
 The project is deployed <a href="https://aquamarine-meerkat-45f945.netlify.app/">here</a>
 
-Tech Stack:- ReactJS, Chakra UI, Redux, HTML, CSS, MongoDB, ExpressJS, NodeJS.
+# Uses
+We can sort,filter and add products to the cart, and buy products from the site.
+
+# Functionalities Added
+<ul>
+  <li>Landing Page</li>
+  <li>Filtering and Sorting</li>
+  <li>Products add to cart & delete from cart</li>
+  <li>Products details page</li>
+</ul>
+
+# Tech Stacks / Tools
+<ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>JavaScript</li>
+  <li>ReactJS</li>
+  <li>Chakra UI</li>
+  <li>MongoDB</li>
+  <li>ExpressJS</li>
+  <li>NodeJS</li>
+  <li>GitHub</li>
+  <li>Netlify</li>
+  <li>Heroku</li>
+  <li>VS Code</li>
+</ul>
 
 Screenshots:-
 
