@@ -1,15 +1,4 @@
-import {
-	Heading,
-	Grid,
-	GridItem,
-	Flex,
-	Box,
-	Text,
-	Link,
-	Image,
-	Select,
-	textDecoration,
-} from '@chakra-ui/react';
+import { Heading, Grid, Flex, Box, Text, Link, Image, Select } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,7 +10,7 @@ export default function ProductComponent() {
 
 	const fetchProducts = async () => {
 		const response = await axios
-			.get('https://reactministore.herokuapp.com/products/products/')
+			.get('https://reactministore.herokuapp.com/products/')
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
@@ -35,7 +24,7 @@ export default function ProductComponent() {
 	const handleBrands = async (e) => {
 		let brand = e.target.value;
 		const response = await axios
-			.get(`https://reactministore.herokuapp.com/products/products/sort/${brand}`)
+			.get(`https://reactministore.herokuapp.com/products/sort/${brand}`)
 			.catch((err) => {
 				console.log('Err: ', err);
 			});

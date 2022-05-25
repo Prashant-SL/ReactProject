@@ -22,8 +22,6 @@ export default function ProductDetail() {
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
-		// console.log(response)
-
 		dispatch(selectedProduct(response.data));
 	};
 	useEffect(() => {
