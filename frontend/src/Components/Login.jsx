@@ -26,7 +26,7 @@ export default function Login() {
 	const PostData = async (e) => {
 		e.preventDefault();
 		await axios
-			.post('https://rvsn.herokuapp.com/login', formData)
+			.post('https://reactministore.herokuapp.com/login', formData)
 			.then((res) => {
 				console.log('result', res.data.token);
 				window.localStorage.setItem(

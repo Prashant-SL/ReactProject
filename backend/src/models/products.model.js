@@ -21,19 +21,4 @@ const productsSchema = new mongoose.Schema(
 	}
 );
 
-const Products = mongoose.model('products', productsSchema);
-
-module.exports = Products;
-
-//      "id":"",
-// 		"brandname":"",
-// 		"price":"",
-// 		"color":"",
-// 		"discount_price":"",
-// 		"screensize":"",
-// 		"hard_disik_size":"",
-// 		"ram":"",
-// 		"os":"",
-// 		"card_discription":"",
-// 		"summary":"",
-// 		"images":["","","",""]
+module.exports = mongoose.model('products', productsSchema);

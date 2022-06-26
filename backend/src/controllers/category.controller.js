@@ -4,6 +4,9 @@ const router = express.Router();
 
 const Category = require('../models/category.model.js');
 
+
+
+
 router.get('', async (req, res) => {
 	try {
 		const categories = await Category.find().lean().exec();
@@ -12,7 +15,6 @@ router.get('', async (req, res) => {
 		return res.status(500).send(err.message);
 	}
 });
-
 router.post('', async (req, res) => {
 	try {
 		const categories = await Category.create(req.body);
@@ -21,6 +23,7 @@ router.post('', async (req, res) => {
 		return res.send(err.message);
 	}
 });
+
 
 router.get('/:id', async (req, res) => {
 	try {

@@ -16,12 +16,11 @@ export default function Checkout() {
 	const [cart, setcart] = useState([]);
 
 	const loginData = JSON.parse(localStorage.getItem('login')) || 0;
-	console.log(loginData.email);
 
 	let response;
 	const fetchProducts = async () => {
 		response = await axios
-			.get('https://reactministore.herokuapp.com/products/cart/')
+			.get('https://reactministore.herokuapp.com/cart/')
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
@@ -32,7 +31,7 @@ export default function Checkout() {
 		fetchProducts();
 	}, []);
 
-	let totalPrice = 0;
+	var totalPrice = 0;
 	for (let i = 0; i < cart.length; i++) {
 		totalPrice += Number(cart[i].price);
 	}

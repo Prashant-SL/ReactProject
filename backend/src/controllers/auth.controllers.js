@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 
 const newToken = (user) => {
-	return jwt.sign({ user }, process.env.JWT_SECRET_KEY);
+	return jwt.sign({ user }, 'prashantsl');
 };
 
 const register = async (req, res) => {
@@ -24,7 +24,6 @@ const register = async (req, res) => {
 
 		// then we will create the token for that user
 		const token = newToken(user);
-
 		// then return the user and the token
 
 		res.send({ user, token });

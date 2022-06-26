@@ -12,8 +12,7 @@ const ProductDetails = () => {
 	const { image, title, price, category, description } = product;
 	const dispatch = useDispatch();
 	const fetchProductDetail = async (id) => {
-		let response = await axios
-			.get(`https://reactministore.herokuapp.com/products/${id}`)
+		let response = await axios.get(`https://reactministore.herokuapp.com/products/${id}`)
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
@@ -29,9 +28,8 @@ const ProductDetails = () => {
 
 	const addProductCart = async () => {
 		selected.push(product);
-		await axios.post('https://reactministore.herokuapp.com/cart', product);
+		const response = await axios.post('https://reactministore.herokuapp.com/cart', product);
 		alert('Product has been adde to cart');
-		window.location.href = '/cart';
 	};
 
 	return (

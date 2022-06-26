@@ -10,10 +10,11 @@ export default function Cart() {
 	let response;
 	const fetchProducts = async () => {
 		response = await axios
-			.get('https://reactministore.herokuapp.com/products/cart/')
+			.get(`https://reactministore.herokuapp.com/cart`)
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
+		console.log('response:', response.data);
 		setcart([...response.data]);
 	};
 
@@ -21,18 +22,17 @@ export default function Cart() {
 		fetchProducts();
 	}, []);
 
-	const removeProduct = (id) => {
-		axios
-			.delete(`https://reactministore.herokuapp.com/products/cart/${id}`)
+	const removeProduct = async (id) => {
+		const response = await axios
+			.delete(`https://reactministore.herokuapp.com/cart/${id}`)
 			.then(console.log('deleted'));
 		window.alert('Item Removed');
 		window.location.reload();
 	};
 
 	let userDetail = window.localStorage.getItem('login');
-	console.log('login', userDetail);
 
-	let totalPrice = 0;
+	var totalPrice = 0;
 	for (let i = 0; i < cart.length; i++) {
 		totalPrice += Number(cart[i].price);
 	}

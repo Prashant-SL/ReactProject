@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
-
 const cartSchema = new mongoose.Schema(
 	{
-		id: { type: String },
-		brandname: { type: String },
-		price: { type: String },
+		brandname: { type: String, required: true },
+		price: { type: String, required: true },
 		color: { type: String },
 		discount_price: { type: String },
 		screensize: { type: String },
@@ -12,28 +10,13 @@ const cartSchema = new mongoose.Schema(
 		ram: { type: String },
 		os: { type: String },
 		card_description: { type: String },
-		summary: { type: String },
-		images: [{ type: String }],
+		summary: { type: String, required: true },
+		images: [{ type: String, required: true }],
 	},
 	{
-		versionKey: false,
-		timestamps: true,
+		versionKey: false, // removed __v
+		timestamps: true, // createdAt, updatedAt
 	}
 );
 
-const cartProducts = mongoose.model('cart', cartSchema);
-
-module.exports = cartProducts;
-
-//      "id":"",
-// 		"brandname":"",
-// 		"price":"",
-// 		"color":"",
-// 		"discount_price":"",
-// 		"screensize":"",
-// 		"hard_disik_size":"",
-// 		"ram":"",
-// 		"os":"",
-// 		"card_discription":"",
-// 		"summary":"",
-// 		"images":["","","",""]
+module.exports = mongoose.model('cartdata', cartSchema);

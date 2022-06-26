@@ -10,9 +10,8 @@ import { useNavigate } from 'react-router';
 export default function ProductDetail() {
 	let navigate = useNavigate();
 	const loginData = JSON.parse(localStorage.getItem('login')) || 0;
-	let product = useSelector((state) => state.product);
+	var product = useSelector((state) => state.product);
 	let cart = useSelector((state) => state.cart);
-	console.log('cart.', cart);
 	const dispatch = useDispatch();
 	const { id } = useParams();
 
@@ -31,19 +30,16 @@ export default function ProductDetail() {
 		};
 	}, [id]);
 
-	var count = 0;
 	const addProductCart = async () => {
 		if (loginData.login) {
-			const response = await axios
-				.post(`https://reactministore.herokuapp.com/cart`, product)
+			await axios.post(`https://reactministore.herokuapp.com/cart`, product)
 				.then((res) => console.log(res))
 				.catch((err) => {
 					console.log('Err: ', err);
 				});
 			window.location.reload();
-			// navigate('/products')
 		} else {
-			window.alert('Please Login');
+			window.alert('Please Login to Add Product to Cart');
 			navigate('/login');
 		}
 	};

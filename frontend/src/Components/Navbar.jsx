@@ -9,12 +9,13 @@ export default function Navbar() {
 
 	const loginData = JSON.parse(localStorage.getItem('login')) || 0;
 	const len = localStorage.length;
-
 	let response;
 	const fetchProducts = async () => {
-		response = await axios.get('http://localhost:4500/cart/').catch((err) => {
-			console.log('Err: ', err);
-		});
+		response = await axios
+			.get('https://reactministore.herokuapp.com/cart')
+			.catch((err) => {
+				console.log('Err: ', err);
+			});
 		setcart([...response.data]);
 	};
 
@@ -32,6 +33,7 @@ export default function Navbar() {
 		window.alert('Please Login');
 		navigate('/login');
 	};
+
 	return (
 		<>
 			<Box

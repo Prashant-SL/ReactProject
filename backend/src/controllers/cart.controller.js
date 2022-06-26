@@ -1,32 +1,40 @@
 const express = require('express');
 const router = express.Router();
-
-const cartProducts = require('../models/cart.model');
+const Cart = require('../models/cart.model.js');
 
 router.get('', async (req, res) => {
 	try {
-		const cartproducts = await cartProducts.find().lean().exec();
-		return res.send(cartproducts);
-	} catch (eroor) {
-		return res.status(500).send(cartproducts);
-	}
-});
-
-router.delete('/:id', async (req, res) => {
-	try {
-		const cartproducts = await cartProducts.findByIdAndDelete(req.params.id);
-		return res.send(cartproducts);
-	} catch (eroor) {
-		return res.status(500).send(cartproducts);
+		const carts = await Cart.find().lean().exec();
+		return res.send(carts);
+	} catch (err) {
+		return res.status(500).send(err.message);
 	}
 });
 
 router.post('', async (req, res) => {
 	try {
-		const cartproduct = await cartProducts.create(req.body);
-		return res.send(cartproduct);
-	} catch (eroor) {
-		return res.status(500).send(eroor.message);
+		const carts = await Cart.create(req.body);
+		return res.status(800).send(carts);
+	} catch (err) {
+		return res.send(err.message);
+	}
+});
+
+router.get('/:id', async (req, res) => {
+	try {
+		const carts = await Cart.findById(req.params.id).lean().exec();
+		return res.send(carts);
+	} catch (err) {
+		return res.status(500).send(err.message);
+	}
+});
+
+router.delete('/:id', async (req, res) => {
+	try {
+		const carts = await Cart.findByIdAndDelete(req.params.id);
+		return res.send(carts);
+	} catch (err) {
+		return res.status(500).send(err.message);
 	}
 });
 
