@@ -1,4 +1,5 @@
-import { Box, Link, Image, Grid } from '@chakra-ui/react';
+import { Box, Image, Grid } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import ProductComponent from './ProductComponent';
 
@@ -8,7 +9,7 @@ export default function Home() {
 			{/* <h1>Home Page</h1> */}
 			<Box m='auto' mt='5' maxW='95%'>
 				<Box boxShadow='dark-lg' p='6' rounded='md' bg='white'>
-					<Link href='products/62870f3533e19e2fbd54a67d'>
+					<Link to='products/62870f3533e19e2fbd54a67d'>
 						<Grid
 							templateColumns={{
 								base: 'repeat(2, 1fr)',
@@ -25,7 +26,7 @@ export default function Home() {
 					</Link>
 				</Box>
 				<Box boxShadow='dark-lg' p='6' rounded='md' bg='white' mt={5}>
-					<Link href='products/62870f3533e19e2fbd54a688'>
+					<Link to='products/62870f3533e19e2fbd54a688'>
 						<Grid
 							templateColumns={{
 								base: 'repeat(2, 1fr)',

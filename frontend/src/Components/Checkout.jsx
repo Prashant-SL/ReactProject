@@ -6,9 +6,9 @@ import {
 	FormLabel,
 	Heading,
 	Input,
-	Link,
 	Text,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -87,7 +87,7 @@ export default function Checkout() {
 								<Heading size='sm'>{totalPrice}</Heading>
 							</Flex>
 							<hr></hr>
-							<Link href='/payment'>
+							<Link to='/payment'>
 								<Button mt='5'>Procced to Payment</Button>
 							</Link>
 						</Box>
