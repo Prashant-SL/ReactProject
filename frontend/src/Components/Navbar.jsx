@@ -1,5 +1,4 @@
-import { Box, Text, Hide } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Box, Link, Text, Hide } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
@@ -59,11 +58,11 @@ export default function Navbar() {
 							<b>React Mini Store</b>
 						</Text>
 					</Hide>
-					<Link _hover={{ textDecoration: 'none' }} to='/'>
+					<Link _hover={{ textDecoration: 'none' }} href='/'>
 						Home
 					</Link>
 					<Hide below='sm'>
-						<Link _hover={{ textDecoration: 'none' }} ml='2' to='/products'>
+						<Link _hover={{ textDecoration: 'none' }} ml='2' href='/products'>
 							Products
 						</Link>
 					</Hide>
@@ -72,7 +71,7 @@ export default function Navbar() {
 					{loginData.login ? (
 						<Link
 							_hover={{ textDecoration: 'none' }}
-							to='/cart'
+							href='/cart'
 							border='1px'
 							borderRadius={10}
 							w='80px'
@@ -83,7 +82,7 @@ export default function Navbar() {
 						<Link
 							_hover={{ textDecoration: 'none' }}
 							onClick={loginAlert}
-							to='/login'
+							href='/login'
 							border='1px'
 							borderRadius={10}
 							w='80px'
@@ -96,7 +95,7 @@ export default function Navbar() {
 							{loginData.name}
 						</Link>
 					) : (
-						<Link to='/login' _hover={{ textDecoration: 'none' }}>
+						<Link href='/login' _hover={{ textDecoration: 'none' }}>
 							Login
 						</Link>
 					)}

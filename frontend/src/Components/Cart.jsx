@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Box, Flex, Heading, Text, Image, Grid, Button } from '@chakra-ui/react';
+import { Box, Link, Flex, Heading, Text, Image, Grid, Button } from '@chakra-ui/react';
 import axios from 'axios';
 
 export default function Cart() {
@@ -130,7 +129,7 @@ export default function Cart() {
 								<b>Total Price: </b>
 								{totalPrice}
 							</Text>
-							<Link to='/checkout'>
+							<Link href='/checkout'>
 								<Button colorScheme='teal' variant='solid' mb='2%' mt='2%'>
 									Checkout
 								</Button>

@@ -1,5 +1,4 @@
-import { Heading, Grid, Flex, Box, Text, Image, Select } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Heading, Grid, Flex, Box, Text, Link, Image, Select } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
@@ -69,7 +68,7 @@ export default function ProductComponent() {
 				>
 					{products.map((e) => {
 						return (
-							<Link to={`products/${e._id}`} _hover={{ textDecoration: 'none' }}>
+							<Link href={`products/${e._id}`} _hover={{ textDecoration: 'none' }}>
 								<Box
 									w='100%'
 									minH='100%'
