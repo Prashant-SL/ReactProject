@@ -14,13 +14,11 @@ export default function Login() {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		console.log('value:', value);
 		setFormdata({ ...formData, [name]: value });
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('Submitted button');
 	};
 
 	const PostData = async (e) => {

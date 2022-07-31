@@ -12,6 +12,8 @@ import {
 } from '@chakra-ui/react';
 import Login from './Login';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Register() {
 	const initialValue = {
@@ -24,23 +26,20 @@ export default function Register() {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		console.log('value:', value);
 		setFormdata({ ...formData, [name]: value });
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('Submitted button');
 	};
 
 	const PostData = (e) => {
 		e.preventDefault();
 		axios
 			.post('https://reactministore.herokuapp.com/register', formData)
-			.then((res) => window.alert('Registered Sucessfull'))
+			.then((res) => toast.success('Registered Sucessfull'))
 			.catch((err) => console.log('err', err));
 	};
-	console.log('formData:', formData);
 
 	return (
 		<div>
@@ -88,6 +87,7 @@ export default function Register() {
 					<Login />
 				</Flex>
 			</Box>
+			<ToastContainer />
 		</div>
 	);
 }

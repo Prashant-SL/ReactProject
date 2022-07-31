@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Link, Flex, Heading, Text, Image, Grid, Button } from '@chakra-ui/react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Cart() {
 	const [cart, setcart] = useState([]);
-
 	let response;
 	const fetchProducts = async () => {
 		response = await axios
@@ -12,7 +13,6 @@ export default function Cart() {
 			.catch((err) => {
 				console.log('Err: ', err);
 			});
-		console.log('response:', response.data);
 		setcart([...response.data]);
 	};
 
@@ -24,8 +24,11 @@ export default function Cart() {
 		const response = await axios
 			.delete(`https://reactministore.herokuapp.com/cart/${id}`)
 			.then(console.log('deleted'));
-		window.alert('Item Removed');
-		window.location.reload();
+
+		toast.success("Product removed from the cart")
+		setTimeout(() => {
+			window.location.reload();
+		}, 4000);
 	};
 
 	let userDetail = window.localStorage.getItem('login');
@@ -138,6 +141,7 @@ export default function Cart() {
 					</Box>
 				</Flex>
 			</Box>
+			<ToastContainer />
 		</div>
 	);
 }

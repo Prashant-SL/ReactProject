@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectedProduct, removeSelectedProduct } from '../redux/actions/productActions';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Box, Button, Flex, Grid, Heading, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 
@@ -37,10 +38,24 @@ export default function ProductDetail() {
 				.catch((err) => {
 					console.log('Err: ', err);
 				});
-			window.location.reload();
+			toast.success("Product added to the cart successfully")
+			setTimeout(() => {
+				window.location.reload();
+			}, 4000);
 		} else {
-			window.alert('Please Login to Add Product to Cart');
-			navigate('/login');
+
+			toast.info('Please Login to Add Product to Cart', {
+				position: "top-right",
+				autoClose: 3000,
+				hideProgressBar: false,
+				closeOnClick: false,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+			setTimeout(() => {
+				navigate('/login');
+			}, 4000);
 		}
 	};
 
@@ -116,6 +131,7 @@ export default function ProductDetail() {
 						</Box>
 					</Box>
 				</Flex>
+				<ToastContainer />
 			</Box>
 		</>
 	);
