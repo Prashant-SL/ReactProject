@@ -17,7 +17,7 @@ export default function Navbar() {
       const { data: cartResponse } = await axios
         .get(`${BASE_URL}/cart`)
         .catch(({ message }) => {
-          console.log("Err: ", message);
+          window.alert(message);
         });
       setcart([...cartResponse]);
     };

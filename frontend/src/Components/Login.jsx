@@ -54,14 +54,13 @@ export default function Login() {
         }
       })
       .catch((err) => {
-        console.log("err", err);
         if (err) {
           window.alert("Please try with another email");
         }
       });
   };
   let newObject = window.localStorage.getItem("login");
-  console.log("login", newObject);
+
   return (
     <div>
       <Box mt='5' w='100%'>

@@ -26,7 +26,7 @@ export default function Cart() {
       const { data: cartData } = await axios
         .get(`${BASE_URL}/cart`)
         .catch(({ message }) => {
-          console.log("Err: ", message);
+          return message;
         });
       setcart([...cartData]);
     };

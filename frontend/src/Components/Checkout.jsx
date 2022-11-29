@@ -60,12 +60,12 @@ export default function Checkout() {
             >
               <FormControl p='5'>
                 <Heading as='h4' size='md' pb={6}>
-                  Add Customer's Details
+                  Shipping Details
                 </Heading>
                 <FormLabel>Name</FormLabel>
-                <Input type='text' value={`${loginData.name}`} />
+                <Input type='text' value={`${loginData.name}`} readOnly />
                 <FormLabel>Email</FormLabel>
-                <Input type='text' value={`${loginData.email}`} />
+                <Input type='text' value={`${loginData.email}`} readOnly />
                 <FormLabel>Address</FormLabel>
                 <Input type='text' placeholder='Enter Shipping Address' />
               </FormControl>
@@ -81,9 +81,9 @@ export default function Checkout() {
               <Heading as='h4' size='md' pb={6}>
                 Price Value
               </Heading>
-              {cart.map((e) => {
+              {cart.map((e, index) => {
                 return (
-                  <Flex justifyContent='space-between' p='5'>
+                  <Flex justifyContent='space-between' p='5' key={index}>
                     <Heading size='sm'>{e.brandname}</Heading>
                     <Heading size='md'>{e.price}</Heading>
                   </Flex>
@@ -95,7 +95,9 @@ export default function Checkout() {
               </Flex>
               <hr></hr>
               <Link href='/payment'>
-                <Button mt='5'>Procced to Payment</Button>
+                <Button mt='5' colorScheme='green'>
+                  Proceed to Pay
+                </Button>
               </Link>
             </Box>
           </Flex>

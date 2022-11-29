@@ -36,7 +36,7 @@ export default function ProductDetail() {
       const { data: productDetailsResponse } = await axios
         .get(`${BASE_URL}/products/${id}`)
         .catch(({ message }) => {
-          console.log("Err: ", message);
+          window.alert(message);
         });
       dispatch(selectedProduct(productDetailsResponse));
     };

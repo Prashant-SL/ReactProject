@@ -12,33 +12,25 @@ const Payment = () => {
       const { data: cartResponse } = await axios
         .get(`${BASE_URL}/cart/`)
         .catch(({ message }) => {
-          console.log("Err: ", message);
+          window.alert(message);
         });
       setCartDetails([...cartResponse]);
     };
     fetchCartProducts();
   }, []);
 
-  const [book, setBook] = useState({
-    name: "Amount to be paid is - ",
-    img: "https://images.pexels.com/photos/2292953/pexels-photo-2292953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  });
-
-  let totalPrice = 0;
-  console.log("cartDetailscartDetailscartDetails", cartDetails);
-  for (let i = 0; i < cartDetails.length; i++) {
-    totalPrice += Number(cartDetails[i].price);
-  }
-
-  const startPayment = (data) => {
+  const startPayment = ({ amount, currency, id }) => {
+    const priceToBePaid = amount;
+    console.log("priceToBePaid", priceToBePaid);
     const options = {
       key: "rzp_test_ClJIw40tzT61oj",
-      amount: data.amount,
-      currency: data.currency,
-      name: book.name,
+      amount: Number(priceToBePaid),
+      currency: currency,
+      name: "React Mini Store",
       description: "Test Transaction",
-      image: book.img,
-      order_id: data.id,
+      image:
+        "https://images.pexels.com/photos/2292953/pexels-photo-2292953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      order_id: id,
       handler: async (response) => {
         try {
           const { data } = await axios.post(
@@ -47,7 +39,7 @@ const Payment = () => {
           );
           alert("Payment Successfull");
         } catch (error) {
-          console.log(error);
+          window.alert(message);
         }
       },
       theme: {
@@ -58,13 +50,17 @@ const Payment = () => {
     rzp1.open();
   };
 
+  let totalPrice = 0;
+  for (let i = 0; i < cartDetails.length; i++) {
+    totalPrice += Number(cartDetails[i].price);
+  }
   const handlePayment = async () => {
     try {
       const orderUrl = `${BASE_URL}/api/payment/orders`;
       const { data } = await axios.post(orderUrl, { amount: totalPrice });
       startPayment(data.data);
     } catch (err) {
-      console.log(err);
+      window.alert(err.message);
     }
   };
 
@@ -74,8 +70,12 @@ const Payment = () => {
         className='book_container'
         style={{ width: "25%", marginTop: "3%", margin: "auto" }}
       >
-        <img src={book.img} alt='book_img' className='book_img' />
-        <p className='book_name'>{book.name}</p>
+        <img
+          src='https://images.pexels.com/photos/2292953/pexels-photo-2292953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          alt='book_img'
+          className='book_img'
+        />
+        <p className='book_name'>Proceed to Pay</p>
         <h1 className='book_price'>
           <b>&#x20B9; {totalPrice}</b>
         </h1>

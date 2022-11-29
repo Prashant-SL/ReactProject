@@ -26,7 +26,7 @@ export default function ProductComponent() {
       const { data: productResponse } = await axios
         .get(`${BASE_URL}/products/`)
         .catch(({ message }) => {
-          console.log("Err: ", message);
+          window.alert(message);
         });
       dispatch(setProducts(productResponse));
     };
@@ -39,7 +39,7 @@ export default function ProductComponent() {
     const { data } = await axios
       .get(`${BASE_URL}/products/sort/${brand}`)
       .catch(({ message }) => {
-        console.log("Err: ", message);
+        window.alert(message);
       });
     dispatch(setProducts(data));
   };
