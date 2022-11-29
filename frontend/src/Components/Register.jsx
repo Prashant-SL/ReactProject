@@ -8,8 +8,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  FormHelperText,
-  FormErrorMessage,
   Heading,
   Flex,
 } from "@chakra-ui/react";
@@ -32,16 +30,14 @@ export default function Register() {
     setFormdata({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const PostData = (e) => {
-    e.preventDefault();
-    axios
+  const PostData = async (e) => {
+    // e.preventDefault();
+    console.log("formData", formData);
+    const resp = axios
       .post(`${BASE_URL}/register`, formData)
       .then((res) => toast.success("Registered Sucessfully"))
       .catch(({ message }) => console.log("Err", message));
+    console.log("resp", resp);
   };
 
   return (
@@ -59,14 +55,15 @@ export default function Register() {
             ml={{ base: "0", md: "5%", lg: "20%" }}
           >
             <Heading>Register</Heading>
-            <FormControl onSubmit={handleSubmit} method='POST'>
+            <FormControl method='POST'>
               <FormLabel>Name</FormLabel>
               <Input
                 name='name'
                 onChange={handleChange}
                 type='text'
+                id='email'
                 placeholder='Enter Name'
-              ></Input>
+              />
               <FormLabel>Email</FormLabel>
               <Input
                 name='email'
@@ -74,14 +71,15 @@ export default function Register() {
                 id='email'
                 type='text'
                 placeholder='Enter Email'
-              ></Input>
+              />
               <FormLabel>Password</FormLabel>
               <Input
                 name='password'
                 onChange={handleChange}
                 type='password'
+                id='password'
                 placeholder='Enter Password'
-              ></Input>
+              />
               <Button onClick={PostData} type='Submit' mt='5' w='50%'>
                 Register
               </Button>

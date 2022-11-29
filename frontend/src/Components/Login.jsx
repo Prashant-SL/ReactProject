@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import BackendURLHelpers from "../Helpers/BackendURLHelpers";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
   const { BASE_URL } = BackendURLHelpers;
@@ -48,7 +50,7 @@ export default function Login() {
         if (res.status == 400) {
           window.alert("Please try with another email");
         } else {
-          window.alert("Logged In Sccessfully");
+          toast.success("Logged In Sccessfully");
           navigate("/");
           window.location.reload();
         }
@@ -95,6 +97,7 @@ export default function Login() {
           </FormControl>
         </Box>
       </Box>
+      <ToastContainer />
     </div>
   );
 }
