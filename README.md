@@ -28,7 +28,7 @@ We can sort,filter and add products to the cart, and buy products from the site.
   <li>NodeJS</li>
   <li>GitHub</li>
   <li>Netlify</li>
-  <li>Heroku</li>
+  <li>Cyclic.sh</li>
   <li>VS Code</li>
 </ul>
 
