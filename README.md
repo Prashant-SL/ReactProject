@@ -3,7 +3,7 @@ This is the solo project that I have done in the short timespan of 10 days. It i
 
 I faced challenges in using Chakra UI, as I was using it for the first time. Apart from this i faced difficulties in connecting backend with frontend. Gradually I overcome this with the help of my peer learners.
 
-The project is deployed <a href="">here</a>
+The project is deployed <a href="https://react-store-prashant-sl.netlify.app/">here</a>
 
 # Uses
 We can sort,filter and add products to the cart, and buy products from the site.
